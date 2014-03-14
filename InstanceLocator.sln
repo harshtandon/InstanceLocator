@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstanceLocator", "InstanceLocator\InstanceLocator.csproj", "{09CC3297-2661-4ADA-AEAA-D19F87FC5F29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstanceLocator.Harness", "InstanceLocator.Harness\InstanceLocator.Harness.csproj", "{82C79F14-F3C4-4D69-8EC2-3E4BCA78E1DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09CC3297-2661-4ADA-AEAA-D19F87FC5F29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09CC3297-2661-4ADA-AEAA-D19F87FC5F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09CC3297-2661-4ADA-AEAA-D19F87FC5F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09CC3297-2661-4ADA-AEAA-D19F87FC5F29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82C79F14-F3C4-4D69-8EC2-3E4BCA78E1DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82C79F14-F3C4-4D69-8EC2-3E4BCA78E1DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82C79F14-F3C4-4D69-8EC2-3E4BCA78E1DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82C79F14-F3C4-4D69-8EC2-3E4BCA78E1DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

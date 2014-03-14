@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InstanceLocator</name>
+    </assembly>
+    <members>
+        <member name="M:InstanceLocator.Abstract.IDependencyResolver.GetService``1">
+            <summary>
+            Resolve a type and all it's dependencies.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InstanceLocator.Abstract.IDependencyResolver.GetService``1(System.String)">
+            <summary>
+            Resolve a type and all it's dependencies given it's token.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InstanceLocator.Abstract.IDependencyResolver.GetServiceByType(System.Type,System.String)">
+            <summary>
+            Resolve a type and all it's dependencies given it's type and token.
+            </summary>
+            <param name="type"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InstanceLocator.ActivationStrategies.RenewBindingStrategy">
+            <summary>
+            An activation strategy that renews a binding for any requested primitive.
+            This ensures fakes are composed of primitives with random values. Fakes become snowfakes.
+            </summary>
+        </member>
+        <member name="T:InstanceLocator.Helpers.RandomNumberHelper">
+            <summary>
+            A thread safe implementation of random number generator.
+            </summary>
+        </member>
+        <member name="T:InstanceLocator.NinjectDependencyResolver">
+            <summary>
+            A dependency resolver that uses Ninject as DI Container.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:InstanceLocator.NinjectDependencyResolver.#ctor" -->
+        <!-- Badly formed XML comment ignored for member "M:InstanceLocator.NinjectDependencyResolver.#ctor(Ninject.IKernel)" -->
+        <member name="M:InstanceLocator.NinjectDependencyResolver.#ctor(Ninject.IKernel,Ninject.Modules.INinjectModule[])">
+            <summary>
+            Initialize with specified Kernel and load specified modules in that Kernel.
+            </summary>
+            <param name="kernel"></param>
+            <param name="moduleList"></param>
+        </member>
+        <member name="T:InstanceLocator.NinjectModules.DefaultConstantsModule">
+            <summary>
+            This module binds supported primitives (known at compile time) to some constant value.
+            Types which can only be discovered during runtime like Enum and Sytem.Array are bound and resolved at runtime.
+            </summary>
+        </member>
+        <member name="T:InstanceLocator.NinjectModules.InfraConstantsModule">
+            <summary>
+            Register all infrastructure related bindings here.
+            </summary>
+        </member>
+        <member name="T:InstanceLocator.NinjectModules.OverridenConstantsModule">
+            <summary>
+            This module binds supported primitives to a constant value specified by the user.
+            All bindings have a named token called 'Preferred'.
+            </summary>
+        </member>
+        <member name="T:InstanceLocator.NinjectProviders.ArrayProvider">
+            <summary>
+            Provider that creates instances of an array of any specified type. 
+            Any nested dependencies of element types are all resolved recursively through normal resolution pipeline.
+            </summary>
+        </member>
+        <member name="T:InstanceLocator.NinjectProviders.EnumProvider">
+            <summary>
+            Provider that returns a randomly selected enumeration from amongst all possible values of an enum.
+            </summary>
+        </member>
+        <member name="T:InstanceLocator.NinjectResolvers.CustomSelfBindingResolver">
+            <summary>
+            The standard self binding resolver with overriden list of self bindable types.
+            </summary>
+        </member>
+        <member name="M:InstanceLocator.Extensions.NinjectBindingExtensions.ReplaceConstantBinding(Ninject.IKernel,System.Type,System.Object,System.String)">
+            <summary>
+            Add a new binding with the specified token or replace it if it already exists.
+            </summary>
+            <param name="kernel"></param>
+            <param name="type"></param>
+            <param name="value"></param>
+            <param name="token"></param>
+        </member>
+    </members>
+</doc>

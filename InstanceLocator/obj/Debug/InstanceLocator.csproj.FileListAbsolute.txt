@@ -1,0 +1,9 @@
+c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLocator\bin\Debug\InstanceLocator.dll
+c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLocator\bin\Debug\InstanceLocator.pdb
+c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLocator\bin\Debug\Ninject.dll
+c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLocator\bin\Debug\Ninject.pdb
+c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLocator\bin\Debug\Ninject.xml
+c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLocator\obj\Debug\InstanceLocator.csprojResolveAssemblyReference.cache
+c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLocator\obj\Debug\InstanceLocator.dll
+c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLocator\obj\Debug\InstanceLocator.pdb
+c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLocator\bin\Debug\InstanceLocator.XML
