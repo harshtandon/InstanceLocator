@@ -8,7 +8,7 @@ using InstanceLocator.Helpers;
 
 namespace InstanceLocator.Extensions
 {
-    [Obsolete("Not used")]
+    [Obsolete("Not Used")]
     public static class NinjectBindingExtensions
     {
         /// <summary>

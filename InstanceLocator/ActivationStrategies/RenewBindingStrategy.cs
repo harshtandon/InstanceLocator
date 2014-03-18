@@ -20,9 +20,6 @@ namespace InstanceLocator.ActivationStrategies
         public override void Activate(IContext context, InstanceReference reference)
         {
             context.Kernel.IssueFreshBinding(context.Request.Service, "Default"); 
-
-
-            //context.Request.Service.BindTypeToConstant(context.Kernel);
         }
     }
 }

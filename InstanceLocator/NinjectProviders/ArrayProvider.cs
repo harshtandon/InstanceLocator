@@ -6,32 +6,27 @@ using Ninject;
 using Ninject.Activation;
 using Ninject.Planning.Bindings;
 
-// { "bool", "byte", "short", "int", "long", "float", "double", "decimal", "datetime" };
-// { "datetime", "DateTime" }, { "set", "SortedSet" }, { "list", "List" }, { "map", "Dictionary" } }
-
 namespace InstanceLocator.NinjectProviders
 {
     /// <summary>
     /// Provider that creates instances of an array of any specified type. 
     /// Any nested dependencies of element types are all resolved recursively through normal resolution pipeline.
+    /// Arrays have been explicitly configured to prevent self binding which  otherwise leads to a null/0 stuffed array.
     /// </summary>
     class ArrayProvider : Provider<object>
     {
-
         protected override object CreateInstance(IContext context)
         {
             if (!context.Request.Service.IsArray)
                 throw new InvalidOperationException("Wrong provider plugged in. Current provider serves System.Array instead of " + context.Request.Service.FullName);
 
             var elementType = context.Request.Service.GetElementType();
-            //var arrayLength = context.Kernel.Get<int>("CollectionLength");
 
+            // TODO : var arrayLength = context.Kernel.Get<int>("CollectionLength");
             var arrayLength = Helpers.RandomNumberHelper.Randomizer.Next(1, 11);
-            
+
             var arrayInstance = Array.CreateInstance(elementType, arrayLength);
 
-            // Arrays have been configured to prevent self binding which  otherwise leads to a null/0 stuffed array.
-            // Loop so we can generate a new fake instance every time and stuff it in the array.
             for (int idx = 0; idx < arrayLength; ++idx)
             {
                 var elementInstance = context.Kernel.Get(elementType);

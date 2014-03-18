@@ -53,6 +53,7 @@
     <Compile Include="NinjectModules\OverridenConstantsModule.cs" />
     <Compile Include="NinjectProviders\ArrayProvider.cs" />
     <Compile Include="NinjectProviders\BoolProvider.cs" />
+    <Compile Include="NinjectProviders\DateTimeProvider.cs" />
     <Compile Include="NinjectProviders\EnumProvider.cs" />
     <Compile Include="NinjectProviders\NumericalsProvider.cs" />
     <Compile Include="NinjectProviders\StringProvider.cs" />

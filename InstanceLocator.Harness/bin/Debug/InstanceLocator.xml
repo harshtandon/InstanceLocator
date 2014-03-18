@@ -75,11 +75,32 @@
             <summary>
             Provider that creates instances of an array of any specified type. 
             Any nested dependencies of element types are all resolved recursively through normal resolution pipeline.
+            Arrays have been explicitly configured to prevent self binding which  otherwise leads to a null/0 stuffed array.
+            </summary>
+        </member>
+        <member name="T:InstanceLocator.NinjectProviders.BoolProvider">
+            <summary>
+            Provider that creates instances of System.Boolean
+            </summary>
+        </member>
+        <member name="T:InstanceLocator.NinjectProviders.DateTimeProvider">
+            <summary>
+            Provider that creates instances of DateTime
             </summary>
         </member>
         <member name="T:InstanceLocator.NinjectProviders.EnumProvider">
             <summary>
             Provider that returns a randomly selected enumeration from amongst all possible values of an enum.
+            </summary>
+        </member>
+        <member name="T:InstanceLocator.NinjectProviders.NumericalsProvider">
+            <summary>
+            Provider for supported numeric types.
+            </summary>
+        </member>
+        <member name="T:InstanceLocator.NinjectProviders.StringProvider">
+            <summary>
+            Provider that creates a random instance of string
             </summary>
         </member>
         <member name="T:InstanceLocator.NinjectResolvers.CustomSelfBindingResolver">

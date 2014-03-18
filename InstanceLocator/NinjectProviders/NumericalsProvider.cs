@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Ninject.Activation;
-using InstanceLocator.Extensions;
 using InstanceLocator.Helpers;
 
 namespace InstanceLocator.NinjectProviders
 {
+    //TODO : Verify randomness logic
+    /// <summary>
+    /// Provider for supported numeric types.
+    /// </summary>
     class NumericalsProvider : Provider<object>
     {
         protected override object CreateInstance(IContext context)
@@ -31,6 +34,8 @@ namespace InstanceLocator.NinjectProviders
             else
                 throw new Exception("Type does not have an implementation for getting Random Instance.");
         }
+
+        #region GetRandom methods
 
         // Byte
         public static byte GetRandomByte(int min = 1, int max = 256)
@@ -89,5 +94,6 @@ namespace InstanceLocator.NinjectProviders
             return ((Convert.ToDecimal(RandomNumberHelper.Randomizer.NextDouble()) * (maximum - minimum)) + minimum);
         }
 
+        #endregion
     }
 }

@@ -8,13 +8,13 @@ using InstanceLocator.Helpers;
 namespace InstanceLocator.NinjectProviders
 {
     /// <summary>
-    /// Provider that creates instances of System.Boolean
+    /// Provider that creates instances of DateTime
     /// </summary>
-    class BoolProvider : Provider<bool>
+    class DateTimeProvider : Provider<DateTime>
     {
-        protected override bool CreateInstance(IContext context)
+        protected override DateTime CreateInstance(IContext context)
         {
-            return RandomNumberHelper.Randomizer.Next(0, 2) == 1;
+            throw new NotImplementedException();
         }
     }
 }

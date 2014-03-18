@@ -24,7 +24,7 @@ namespace InstanceLocator.NinjectModules
             // When reading from the data file, we need to be able to define a parent scope
             // Like so, Bind<int>().ToConstant(12).WhenParentNamed("Parent").Named("Preferred");
             
-            //Bind<int>().ToConstant(12).Named("Preferred");
+            Bind<int>().ToConstant(12).Named("Preferred");
 
             //Bind<string>().ToConstant("OverridenString").Named("Preferred");
 

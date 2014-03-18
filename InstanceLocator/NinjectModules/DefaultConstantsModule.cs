@@ -5,7 +5,6 @@ using System.Text;
 using Ninject;
 using Ninject.Activation;
 using Ninject.Modules;
-using InstanceLocator.Extensions;
 
 namespace InstanceLocator.NinjectModules
 {

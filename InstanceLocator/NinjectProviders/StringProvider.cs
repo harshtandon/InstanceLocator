@@ -7,6 +7,9 @@ using InstanceLocator.Helpers;
 
 namespace InstanceLocator.NinjectProviders
 {
+    /// <summary>
+    /// Provider that creates a random instance of string
+    /// </summary>
     class StringProvider : Provider<object>
     {
         public static readonly string[] StringPool =  ("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et " +
