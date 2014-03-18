@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Ninject.Planning.Bindings.Resolvers;
+using InstanceLocator.Extensions;
 
 namespace InstanceLocator.NinjectResolvers
 {
@@ -14,16 +15,15 @@ namespace InstanceLocator.NinjectResolvers
         // All other types should attempt to do a self binding first.
         protected override bool TypeIsSelfBindable(Type service)
         {
-            return    !service.IsInterface
+            return !service.IsInterface
                    && !service.IsAbstract
                    && !service.ContainsGenericParameters
                    && !service.IsEnum
                    && !service.IsArray
-                   && service != typeof(byte) && service != typeof(short) && service != typeof(int) && service != typeof(long)
-                   && service != typeof(float) && service != typeof(double) && service != typeof(decimal)
-                   && service != typeof(string)
-                   && service != typeof(bool)
-                   && service != typeof(DateTime);
+                   && !service.IsNumericType()
+                   && !service.IsString()
+                   && !service.IsBoolean()
+                   && !service.IsDateTime();
         }
     }
 }

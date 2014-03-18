@@ -13,6 +13,13 @@ namespace InstanceLocator.NinjectProviders
     /// </summary>
     class NumericalsProvider : Provider<object>
     {
+
+        public NumericalsProvider()
+        {
+            
+
+        }
+
         protected override object CreateInstance(IContext context)
         {
             var type = context.Request.Service;

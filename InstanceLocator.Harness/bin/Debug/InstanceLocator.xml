@@ -35,6 +35,13 @@
             This ensures fakes are composed of primitives with random values. Fakes become snowfakes.
             </summary>
         </member>
+        <member name="M:InstanceLocator.Extensions.TypeExtensions.IsNumericType(System.Type)">
+            <summary>
+            Gets a value indicating whether the type is a supported numeric type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
         <member name="T:InstanceLocator.Helpers.RandomNumberHelper">
             <summary>
             A thread safe implementation of random number generator.
@@ -68,7 +75,6 @@
         <member name="T:InstanceLocator.NinjectModules.OverridenConstantsModule">
             <summary>
             This module binds supported primitives to a constant value specified by the user.
-            All bindings have a named token called 'Preferred'.
             </summary>
         </member>
         <member name="T:InstanceLocator.NinjectProviders.ArrayProvider">

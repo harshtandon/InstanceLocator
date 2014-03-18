@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using InstanceLocator.Extensions;
 using Ninject.Activation;
 using InstanceLocator.Helpers;
 
@@ -20,6 +21,9 @@ namespace InstanceLocator.NinjectProviders
 
         protected override object CreateInstance(IContext context)
         {
+            if(!context.Request.Service.IsString())
+                throw new InvalidOperationException("Wrong provider plugged in. Current provider serves String instead of " + context.Request.Service.FullName);
+
             return StringPool[RandomNumberHelper.Randomizer.Next(0, StringPool.Length)];
         }
     }

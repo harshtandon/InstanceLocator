@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Abstract\IDependencyResolver.cs" />
     <Compile Include="ActivationStrategies\RenewBindingStrategy.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Helpers\RandomHelper.cs" />
     <Compile Include="NinjectDependencyResolver.cs" />
     <Compile Include="NinjectModules\DefaultConstantsModule.cs" />

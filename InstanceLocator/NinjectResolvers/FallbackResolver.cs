@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using InstanceLocator.Extensions;
 using Ninject.Infrastructure;
 using Ninject.Components;
 using Ninject.Activation;
@@ -13,85 +14,39 @@ namespace InstanceLocator.NinjectResolvers
 {
     class FallbackResolver : NinjectComponent, IMissingBindingResolver
     {
-        public static readonly IDictionary<Predicate<IRequest>, IProvider> ProviderMap;
+        private static readonly IDictionary<Predicate<IRequest>, System.Type> ProviderMap;
+
+        static FallbackResolver()
+        {
+            ProviderMap = new Dictionary<Predicate<IRequest>, Type>
+            {
+                {req => req.Service.IsEnum, typeof(EnumProvider)},
+                {req => req.Service.IsArray, typeof(ArrayProvider)},
+                {req => req.Service == typeof (string), typeof(StringProvider)},
+                {req => req.Service.IsNumericType(), typeof(NumericalsProvider)},
+                {req => req.Service == typeof (bool), typeof(BoolProvider)},
+            };
+        }
 
         public IEnumerable<IBinding> Resolve(Multimap<Type, IBinding> bindings, IRequest request)
         {
-            if (request.Service.IsEnum)
-            {
-                return new[]
+            return new[]
                 {
                     new Binding(request.Service)
                     {
-                        ProviderCallback = (context => new EnumProvider())
+                        ProviderCallback = ProviderCallback
                     }
                 };
-            }
-
-            if (request.Service.IsArray)
-            {
-                return new[] 
-                {
-                    new Binding(request.Service)
-                    {
-                        ProviderCallback = (context => new ArrayProvider())
-                    }
-                };
-            }
-
-            if (request.Service == typeof(string))
-            {
-                return new[]
-                {
-                    new Binding(request.Service)
-                    {
-                        ProviderCallback = (context =>  new StringProvider())
-                    }
-                };
-            }
-
-            if (request.Service == typeof(Int32))
-            {
-                return new[]
-                {
-                    new Binding(request.Service)
-                    {
-                        ProviderCallback = (context => new NumericalsProvider()),
-                    }
-                };
-            }
-
-            if (request.Service == typeof(bool))
-            {
-                return new[]
-                {
-                    new Binding(request.Service)
-                    {
-                        ProviderCallback = (context => new BoolProvider()),
-                    }
-                };
-            }
-
-            return Enumerable.Empty<Binding>();
         }
 
-        //private Binding CreateRuntimeBinding(System.Type serviceRequested, string token = "Explicit")
-        //{
-        //    IBindingConfiguration config = new BindingConfiguration();
-        //    config.Metadata.Name = token;
+        private IProvider ProviderCallback(IContext context)
+        {
+            var providerType = ProviderMap.FirstOrDefault(pair => pair.Key(context.Request)).Value;
 
-        //    Binding binding = new Binding(serviceRequested, config);
+            if (providerType == null)
+                throw new Exception("Unable to find a resolver");
 
-        //    if(serviceRequested.IsArray)
-        //        binding.ProviderCallback = (ctxt => new ArrayProvider());
-        //    else if(serviceRequested.IsEnum)
-        //        binding.ProviderCallback = (ctxt => new EnumProvider());
-        //    else if (serviceRequested = typeof(string)) 
-        //        binding.ProviderCallback = (ctxt => new StringProvider());
-        //    else if (serviceRequested == typeof(Int32)) 
-        //        binding.ProviderCallback = (ctxt => new NumericalsProvider());
-
-        //    return binding;
-        //}
+            return (IProvider)Activator.CreateInstance(providerType);
+        }
     }
 }

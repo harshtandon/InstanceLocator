@@ -9,3 +9,13 @@ c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLoca
 c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLocator.Harness\obj\Debug\InstanceLocator.Harness.exe
 c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLocator.Harness\obj\Debug\InstanceLocator.Harness.pdb
 c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLocator.Harness\bin\Debug\InstanceLocator.xml
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator.Harness\bin\Debug\InstanceLocator.Harness.exe
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator.Harness\bin\Debug\InstanceLocator.Harness.pdb
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator.Harness\bin\Debug\InstanceLocator.dll
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator.Harness\bin\Debug\Ninject.dll
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator.Harness\bin\Debug\InstanceLocator.pdb
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator.Harness\bin\Debug\InstanceLocator.xml
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator.Harness\bin\Debug\Ninject.xml
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator.Harness\obj\Debug\InstanceLocator.Harness.csprojResolveAssemblyReference.cache
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator.Harness\obj\Debug\InstanceLocator.Harness.exe
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator.Harness\obj\Debug\InstanceLocator.Harness.pdb

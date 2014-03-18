@@ -7,3 +7,10 @@ c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLoca
 c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLocator\obj\Debug\InstanceLocator.dll
 c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLocator\obj\Debug\InstanceLocator.pdb
 c:\users\qi94\documents\visual studio 2012\Projects\InstanceLocator\InstanceLocator\bin\Debug\InstanceLocator.XML
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator\bin\Debug\InstanceLocator.XML
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator\bin\Debug\InstanceLocator.dll
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator\bin\Debug\InstanceLocator.pdb
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator\bin\Debug\Ninject.xml
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator\obj\Debug\InstanceLocator.csprojResolveAssemblyReference.cache
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator\obj\Debug\InstanceLocator.dll
+C:\Development\Projects\Standard\InstanceLocator\InstanceLocator\obj\Debug\InstanceLocator.pdb
