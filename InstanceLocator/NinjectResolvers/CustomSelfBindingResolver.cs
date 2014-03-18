@@ -14,7 +14,7 @@ namespace InstanceLocator.NinjectResolvers
         // Want the array types to not be self-bindable. In the absence of any matching binding, resolution calls for 
         // array types will fall back to a custom resolver which will works it's magic.
 
-         // All other types should attempt to do a self binding first.
+        // All other types should attempt to do a self binding first.
         protected override bool TypeIsSelfBindable(Type service)
         {
 
@@ -23,11 +23,13 @@ namespace InstanceLocator.NinjectResolvers
 
             return !service.IsInterface
                    && !service.IsAbstract
+                   && !service.ContainsGenericParameters
                    && !service.IsEnum
-                   //&& !service.IsValueType    // Don't want value types to be self bound.
-                   //&& service != typeof(string)
                    && !service.IsArray
-                   && !service.ContainsGenericParameters;
+                   && service != typeof(Int32)
+                   && service != typeof(string)
+                   && service != typeof(bool);
+                   //&& !service.IsValueType    // Don't want value types to be self bound.
         }
     }
 }

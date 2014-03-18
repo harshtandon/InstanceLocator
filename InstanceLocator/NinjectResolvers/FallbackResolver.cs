@@ -13,23 +13,10 @@ namespace InstanceLocator.NinjectResolvers
 {
     class FallbackResolver : NinjectComponent, IMissingBindingResolver
     {
+        public static readonly IDictionary<Predicate<IRequest>, IProvider> ProviderMap;
+
         public IEnumerable<IBinding> Resolve(Multimap<Type, IBinding> bindings, IRequest request)
         {
-
-            // Register provider for Array
-            if (request.Service.IsArray)
-            {
-                return new[] 
-                {
-                    new Binding(request.Service)
-                    {
-                        ProviderCallback = (context => new ArrayProvider())
-                        //,Condition = (rqst => rqst.Service.IsArray),
-                    }
-                };
-            }
-
-            // Register provider for Enum
             if (request.Service.IsEnum)
             {
                 return new[]
@@ -37,14 +24,74 @@ namespace InstanceLocator.NinjectResolvers
                     new Binding(request.Service)
                     {
                         ProviderCallback = (context => new EnumProvider())
-                        //,Condition = (rqst => rqst.Service.IsEnum),
                     }
                 };
             }
 
-            // Unable to find an appropriate resolver
-            // TODO - Throw an exception maybe ?
+            if (request.Service.IsArray)
+            {
+                return new[] 
+                {
+                    new Binding(request.Service)
+                    {
+                        ProviderCallback = (context => new ArrayProvider())
+                    }
+                };
+            }
+
+            if (request.Service == typeof(string))
+            {
+                return new[]
+                {
+                    new Binding(request.Service)
+                    {
+                        ProviderCallback = (context =>  new StringProvider())
+                    }
+                };
+            }
+
+            if (request.Service == typeof(Int32))
+            {
+                return new[]
+                {
+                    new Binding(request.Service)
+                    {
+                        ProviderCallback = (context => new NumericalsProvider()),
+                    }
+                };
+            }
+
+            if (request.Service == typeof(bool))
+            {
+                return new[]
+                {
+                    new Binding(request.Service)
+                    {
+                        ProviderCallback = (context => new BoolProvider()),
+                    }
+                };
+            }
+
             return Enumerable.Empty<Binding>();
         }
+
+        //private Binding CreateRuntimeBinding(System.Type serviceRequested, string token = "Explicit")
+        //{
+        //    IBindingConfiguration config = new BindingConfiguration();
+        //    config.Metadata.Name = token;
+
+        //    Binding binding = new Binding(serviceRequested, config);
+
+        //    if(serviceRequested.IsArray)
+        //        binding.ProviderCallback = (ctxt => new ArrayProvider());
+        //    else if(serviceRequested.IsEnum)
+        //        binding.ProviderCallback = (ctxt => new EnumProvider());
+        //    else if (serviceRequested = typeof(string)) 
+        //        binding.ProviderCallback = (ctxt => new StringProvider());
+        //    else if (serviceRequested == typeof(Int32)) 
+        //        binding.ProviderCallback = (ctxt => new NumericalsProvider());
+
+        //    return binding;
+        //}
     }
 }

@@ -8,6 +8,7 @@ using InstanceLocator.Helpers;
 
 namespace InstanceLocator.Extensions
 {
+    [Obsolete("Not used")]
     public static class NinjectBindingExtensions
     {
         /// <summary>
@@ -30,7 +31,6 @@ namespace InstanceLocator.Extensions
 
             kernel.Bind(type).ToConstant(value).Named(token);
         }
-
 
         public static void IssueFreshBinding(this IKernel kernel, System.Type primitiveType, string token)
         {

@@ -85,7 +85,7 @@ namespace InstanceLocator
             _coreKernel.Components.Add<IMissingBindingResolver, CustomSelfBindingResolver>();
             _coreKernel.Components.Add<IMissingBindingResolver, FallbackResolver>();
 
-            _coreKernel.Components.Add<Ninject.Activation.Strategies.IActivationStrategy, RenewBindingStrategy>();
+            //_coreKernel.Components.Add<Ninject.Activation.Strategies.IActivationStrategy, RenewBindingStrategy>();
         }
 
         # endregion

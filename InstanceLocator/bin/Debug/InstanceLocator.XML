@@ -30,6 +30,7 @@
         </member>
         <member name="T:InstanceLocator.ActivationStrategies.RenewBindingStrategy">
             <summary>
+            DON'T USE - Use IMissingBindingResolver instead to build instances at runtime
             An activation strategy that renews a binding for any requested primitive.
             This ensures fakes are composed of primitives with random values. Fakes become snowfakes.
             </summary>

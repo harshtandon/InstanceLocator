@@ -18,13 +18,13 @@ namespace InstanceLocator.NinjectModules
         public override void Load()
         {
 
-            Kernel.IssueFreshBinding(typeof(System.Int32), "Default");
+            //Kernel.IssueFreshBinding(typeof(System.Int32), "Default");
 
 
-            Kernel.IssueFreshBinding(typeof(System.String), "Default");
+            //Kernel.IssueFreshBinding(typeof(System.String), "Default");
 
 
-            Kernel.IssueFreshBinding(typeof(System.Boolean), "Default");
+            //Kernel.IssueFreshBinding(typeof(System.Boolean), "Default");
 
 
 

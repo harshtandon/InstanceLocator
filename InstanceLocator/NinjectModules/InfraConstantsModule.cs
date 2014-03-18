@@ -20,7 +20,13 @@ namespace InstanceLocator.NinjectModules
             //Bind<int>().ToConstant(7).WhenInjectedInto<ICollection>().Named("CollectionLength");
             //Bind<int>().ToConstant(6).WhenInjectedInto(typeof(System.Collections.ICollection)); // Works
 
-            Bind<int>().ToConstant(7).Named("CollectionLength");
+            //Bind<int>().ToConstant(7).When(Callback).Named("CollectionLength");
+            //Bind<string>().ToConstant("GreatestStringEver");//.Named("CollectionLength");
         }
+
+        //public bool Callback(Ninject.Activation.IRequest req)
+        //{
+        //    return false;
+        //}
     }
 }

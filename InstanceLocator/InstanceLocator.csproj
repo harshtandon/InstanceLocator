@@ -46,14 +46,16 @@
   <ItemGroup>
     <Compile Include="Abstract\IDependencyResolver.cs" />
     <Compile Include="ActivationStrategies\RenewBindingStrategy.cs" />
-    <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Helpers\RandomHelper.cs" />
     <Compile Include="NinjectDependencyResolver.cs" />
     <Compile Include="NinjectModules\DefaultConstantsModule.cs" />
     <Compile Include="NinjectModules\InfraConstantsModule.cs" />
     <Compile Include="NinjectModules\OverridenConstantsModule.cs" />
     <Compile Include="NinjectProviders\ArrayProvider.cs" />
+    <Compile Include="NinjectProviders\BoolProvider.cs" />
     <Compile Include="NinjectProviders\EnumProvider.cs" />
+    <Compile Include="NinjectProviders\NumericalsProvider.cs" />
+    <Compile Include="NinjectProviders\StringProvider.cs" />
     <Compile Include="NinjectResolvers\CustomSelfBindingResolver.cs" />
     <Compile Include="NinjectResolvers\FallbackResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
