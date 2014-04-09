@@ -6,7 +6,7 @@ using Ninject;
 using Ninject.Activation;
 using Ninject.Modules;
 
-namespace InstanceLocator.NinjectModules
+namespace InstanceLocator.FakesResolver.NinjectModules
 {
     /// <summary>
     /// This module binds supported primitives (known at compile time) to some constant value.

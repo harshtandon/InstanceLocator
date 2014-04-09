@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace InstanceLocator.Helpers
+namespace InstanceLocator.FakesResolver.Helpers
 {
     /// <summary>
     /// A thread safe implementation of random number generator.

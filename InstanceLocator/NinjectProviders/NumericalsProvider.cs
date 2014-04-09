@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Ninject.Activation;
-using InstanceLocator.Helpers;
-using InstanceLocator.Extensions;
+using InstanceLocator.FakesResolver.Helpers;
+using InstanceLocator.FakesResolver.Extensions;
 
-namespace InstanceLocator.NinjectProviders
+namespace InstanceLocator.FakesResolver.NinjectProviders
 {
     /// <summary>
     /// Provider for supported numeric types.

@@ -5,9 +5,9 @@ using System.Text;
 using Ninject;
 using Ninject.Activation;
 using Ninject.Activation.Strategies;
-using InstanceLocator.Extensions;
+using InstanceLocator.FakesResolver.Extensions;
 
-namespace InstanceLocator.ActivationStrategies
+namespace InstanceLocator.FakesResolver.ActivationStrategies
 {
     /// <summary>
     /// DON'T USE - Use IMissingBindingResolver instead to build instances at runtime

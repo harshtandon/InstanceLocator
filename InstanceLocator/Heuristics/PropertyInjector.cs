@@ -7,7 +7,7 @@ using Ninject.Selection.Heuristics;
 using System.Reflection;
 using Ninject.Selection.Heuristics;
 
-namespace InstanceLocator.Heuristics
+namespace InstanceLocator.FakesResolver.Heuristics
 {
     /// <summary>
     /// Enables injection on all public properties with setter methods. 

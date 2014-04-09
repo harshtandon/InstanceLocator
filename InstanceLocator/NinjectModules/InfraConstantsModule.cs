@@ -6,7 +6,7 @@ using System.Text;
 using Ninject;
 using Ninject.Modules;
 
-namespace InstanceLocator.NinjectModules
+namespace InstanceLocator.FakesResolver.NinjectModules
 {
     /// <summary>
     /// Register all infrastructure related bindings here.

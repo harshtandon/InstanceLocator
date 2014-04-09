@@ -53,17 +53,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="DependencyResolverTests.cs" />
+    <Compile Include="FakeResolverTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\InstanceLocator\InstanceLocator.csproj">
+    <ProjectReference Include="..\InstanceLocator\InstanceLocator.FakesResolver.csproj">
       <Project>{09cc3297-2661-4ada-aeaa-d19f87fc5f29}</Project>
-      <Name>InstanceLocator</Name>
+      <Name>InstanceLocator.FakesResolver</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SampleData\SampleData.csproj">
+    <ProjectReference Include="..\SampleData\InstanceLocator.SampleData.csproj">
       <Project>{32aa80ef-f39e-4520-9aaa-7675184fbb5d}</Project>
-      <Name>SampleData</Name>
+      <Name>InstanceLocator.SampleData</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

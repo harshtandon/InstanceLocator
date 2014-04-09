@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Ninject.Activation;
-using InstanceLocator.Helpers;
+using InstanceLocator.FakesResolver.Helpers;
 
-namespace InstanceLocator.NinjectProviders
+namespace InstanceLocator.FakesResolver.NinjectProviders
 {
     /// <summary>
     /// Provider that returns a randomly selected enumeration from amongst all possible values of an enum.

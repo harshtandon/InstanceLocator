@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace InstanceLocator.Extensions
+namespace InstanceLocator.FakesResolver.Extensions
 {
     public static class TypeExtensions
     {

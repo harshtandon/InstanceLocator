@@ -6,7 +6,7 @@ using Ninject.Selection.Heuristics;
 using Ninject.Activation;
 using Ninject.Planning.Directives;
 
-namespace InstanceLocator.Heuristics
+namespace InstanceLocator.FakesResolver.Heuristics
 {
     /// <summary>
     /// Overrides the standard constructor scorer in a way that returns a score proportional to the number of arguements.

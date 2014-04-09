@@ -12,8 +12,8 @@ namespace InstanceLocator.SampleData
         public bool NiceProduct { get; set; }
         public DateTime IntroducedDate { get; set; }
         public ProductType ProductType { get; set; }
+        private int _Margin { get; set; }
 
-        public int _Margin { get; private set; }
 
         public Product(int Margin)
         {

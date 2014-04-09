@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using Ninject;
 using Ninject.Planning.Bindings;
-using InstanceLocator.Helpers;
+using InstanceLocator.FakesResolver.Helpers;
 
-namespace InstanceLocator.Extensions
+namespace InstanceLocator.FakesResolver.Extensions
 {
     [Obsolete("Not Used")]
     public static class NinjectBindingExtensions

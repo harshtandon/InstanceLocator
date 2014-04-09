@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Ninject.Planning.Bindings.Resolvers;
-using InstanceLocator.Extensions;
+using InstanceLocator.FakesResolver.Extensions;
 
-namespace InstanceLocator.NinjectResolvers
+namespace InstanceLocator.FakesResolver.NinjectResolvers
 {
     /// <summary>
     /// The standard self binding resolver with overriden list of self bindable types.

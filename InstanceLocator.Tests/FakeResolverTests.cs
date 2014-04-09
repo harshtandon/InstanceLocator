@@ -1,16 +1,17 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using InstanceLocator.Abstract;
-using InstanceLocator.Extensions;
+using InstanceLocator.FakesResolver.Abstract;
+using InstanceLocator.FakesResolver.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 using InstanceLocator.SampleData;
 using System.Reflection;
+using InstanceLocator.FakesResolver;
 
 namespace InstanceLocator.Tests
 {
     [TestClass]
-    public class DependencyResolverTests
+    public class FakeResolverTests
     {
         public static IDependencyResolver _resolver;
 

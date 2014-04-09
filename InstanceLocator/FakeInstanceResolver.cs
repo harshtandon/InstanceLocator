@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using Ninject;
 using Ninject.Modules;
-using InstanceLocator.Abstract;
+using InstanceLocator.FakesResolver.Abstract;
 using Ninject.Planning.Bindings.Resolvers;
-using InstanceLocator.NinjectResolvers;
-using InstanceLocator.ActivationStrategies;
+using InstanceLocator.FakesResolver.NinjectResolvers;
+using InstanceLocator.FakesResolver.ActivationStrategies;
 using Ninject.Selection.Heuristics;
 
-namespace InstanceLocator
+namespace InstanceLocator.FakesResolver
 {
     /// <summary>
     /// A dependency resolver that uses Ninject as DI Container.

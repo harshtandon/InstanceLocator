@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using InstanceLocator.Extensions;
+using InstanceLocator.FakesResolver.Extensions;
 using Ninject.Infrastructure;
 using Ninject.Components;
 using Ninject.Activation;
 using Ninject.Planning.Bindings;
 using Ninject.Planning.Bindings.Resolvers;
-using InstanceLocator.NinjectProviders;
+using InstanceLocator.FakesResolver.NinjectProviders;
 
-namespace InstanceLocator.NinjectResolvers
+namespace InstanceLocator.FakesResolver.NinjectResolvers
 {
     /// <summary>
     /// Generates binding at runtime for types not bound explicitly and also excluded from self binding.

@@ -6,7 +6,7 @@ using Ninject;
 using Ninject.Activation;
 using Ninject.Planning.Bindings;
 
-namespace InstanceLocator.NinjectProviders
+namespace InstanceLocator.FakesResolver.NinjectProviders
 {
     /// <summary>
     /// Provider that creates instances of an array of any specified type. 

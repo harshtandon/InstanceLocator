@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using InstanceLocator.Extensions;
+using InstanceLocator.FakesResolver.Extensions;
 using Ninject.Activation;
-using InstanceLocator.Helpers;
+using InstanceLocator.FakesResolver.Helpers;
 
-namespace InstanceLocator.NinjectProviders
+namespace InstanceLocator.FakesResolver.NinjectProviders
 {
     /// <summary>
     /// Provider that creates instances of DateTime

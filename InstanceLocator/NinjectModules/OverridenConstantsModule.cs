@@ -5,7 +5,7 @@ using System.Text;
 using Ninject;
 using Ninject.Modules;
 
-namespace InstanceLocator.NinjectModules
+namespace InstanceLocator.FakesResolver.NinjectModules
 {
     /// <summary>
     /// This module binds supported primitives to a constant value specified by the user.

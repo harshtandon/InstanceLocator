@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace InstanceLocator.Abstract
+namespace InstanceLocator.FakesResolver.Abstract
 {
     public interface IDependencyResolver
     {
