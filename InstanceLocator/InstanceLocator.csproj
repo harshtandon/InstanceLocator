@@ -51,7 +51,7 @@
     <Compile Include="Helpers\RandomNumberHelper.cs" />
     <Compile Include="Heuristics\ConstructorScoring.cs" />
     <Compile Include="Heuristics\PropertyInjector.cs" />
-    <Compile Include="NinjectDependencyResolver.cs" />
+    <Compile Include="FakeInstanceResolver.cs" />
     <Compile Include="NinjectModules\DefaultConstantsModule.cs" />
     <Compile Include="NinjectModules\InfraConstantsModule.cs" />
     <Compile Include="NinjectModules\OverridenConstantsModule.cs" />

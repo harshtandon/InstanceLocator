@@ -11,7 +11,7 @@ namespace InstanceLocator.Harness
     {
         static void Main(string[] args)
         {
-            IDependencyResolver resolver = new NinjectDependencyResolver();
+            IDependencyResolver resolver = new FakeInstanceResolver();
 
 
             var int1 = resolver.GetService<int>();

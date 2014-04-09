@@ -17,7 +17,7 @@ namespace InstanceLocator.Tests
         [TestInitialize]
         public void SetupTests()
         {
-            _resolver = new NinjectDependencyResolver();
+            _resolver = new FakeInstanceResolver();
         }
 
         [TestMethod]
