@@ -10,7 +10,7 @@ using System.Reflection;
 namespace InstanceLocator.Tests
 {
     [TestClass]
-    public class InstanceTests
+    public class DependencyResolverTests
     {
         public static IDependencyResolver _resolver;
 
@@ -83,6 +83,7 @@ namespace InstanceLocator.Tests
 
             Assert.IsNotNull(customer);
             Assert.IsInstanceOfType(customer, typeof(Customer));
+            TestInitialization(customer);
         }
 
         [TestMethod]
@@ -114,6 +115,11 @@ namespace InstanceLocator.Tests
             Assert.IsNotNull(customerSet);
             Assert.IsInstanceOfType(customerSet, typeof(Customer[]));
             Assert.IsTrue(customerSet.All(cust => cust != null));
+
+            foreach (var customer in customerSet)
+            {
+                TestInitialization(customer);
+            }
         }
 
         /// <summary>
