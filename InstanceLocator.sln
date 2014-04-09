@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstanceLocator.FakesResolver", "InstanceLocator\InstanceLocator.FakesResolver.csproj", "{09CC3297-2661-4ADA-AEAA-D19F87FC5F29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstanceLocator.FakesResolver", "InstanceLocator.FakesResolver\InstanceLocator.FakesResolver.csproj", "{09CC3297-2661-4ADA-AEAA-D19F87FC5F29}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstanceLocator.Harness", "InstanceLocator.Harness\InstanceLocator.Harness.csproj", "{82C79F14-F3C4-4D69-8EC2-3E4BCA78E1DA}"
 EndProject
@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstanceLocator.Tests", "InstanceLocator.Tests\InstanceLocator.Tests.csproj", "{996BDF78-EF3D-48DD-9199-8BDB7C182B18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstanceLocator.SampleData", "SampleData\InstanceLocator.SampleData.csproj", "{32AA80EF-F39E-4520-9AAA-7675184FBB5D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstanceLocator.SampleData", "InstanceLocator.SampleData\InstanceLocator.SampleData.csproj", "{32AA80EF-F39E-4520-9AAA-7675184FBB5D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstanceLocator.EntryPoint", "InstanceLocator.EntryPoint\InstanceLocator.EntryPoint.csproj", "{C11821E4-1673-4081-AA39-A8B45289FF69}"
 EndProject

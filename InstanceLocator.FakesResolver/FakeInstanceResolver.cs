@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using InstanceLocator.FakesResolver.Abstract;
+using InstanceLocator.FakesResolver.NinjectResolvers;
 using Ninject;
 using Ninject.Modules;
-using InstanceLocator.FakesResolver.Abstract;
 using Ninject.Planning.Bindings.Resolvers;
-using InstanceLocator.FakesResolver.NinjectResolvers;
-using InstanceLocator.FakesResolver.ActivationStrategies;
 using Ninject.Selection.Heuristics;
 
 namespace InstanceLocator.FakesResolver

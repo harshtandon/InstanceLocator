@@ -49,11 +49,11 @@
       <Project>{c11821e4-1673-4081-aa39-a8b45289ff69}</Project>
       <Name>InstanceLocator.EntryPoint</Name>
     </ProjectReference>
-    <ProjectReference Include="..\InstanceLocator\InstanceLocator.FakesResolver.csproj">
+    <ProjectReference Include="..\InstanceLocator.FakesResolver\InstanceLocator.FakesResolver.csproj">
       <Project>{09cc3297-2661-4ada-aeaa-d19f87fc5f29}</Project>
       <Name>InstanceLocator.FakesResolver</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SampleData\InstanceLocator.SampleData.csproj">
+    <ProjectReference Include="..\InstanceLocator.SampleData\InstanceLocator.SampleData.csproj">
       <Project>{32aa80ef-f39e-4520-9aaa-7675184fbb5d}</Project>
       <Name>InstanceLocator.SampleData</Name>
     </ProjectReference>
