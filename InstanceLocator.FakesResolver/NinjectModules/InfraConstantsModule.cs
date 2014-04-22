@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using Ninject;
@@ -11,6 +12,7 @@ namespace InstanceLocator.FakesResolver.NinjectModules
     /// <summary>
     /// Register all infrastructure related bindings here.
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public class InfraConstantsModule : NinjectModule
     {
         public override void Load()

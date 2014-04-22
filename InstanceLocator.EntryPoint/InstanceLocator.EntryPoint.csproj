@@ -30,8 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\vdi01t8ahsc109\share_khan\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,14 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Deserializer.cs" />
+    <Compile Include="InstanceLocator.cs" />
     <Compile Include="XmlDataReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\InstanceLocator.FakesResolver\InstanceLocator.FakesResolver.csproj">
+      <Project>{09cc3297-2661-4ada-aeaa-d19f87fc5f29}</Project>
+      <Name>InstanceLocator.FakesResolver</Name>
+    </ProjectReference>
     <ProjectReference Include="..\InstanceLocator.SampleData\InstanceLocator.SampleData.csproj">
       <Project>{32aa80ef-f39e-4520-9aaa-7675184fbb5d}</Project>
       <Name>InstanceLocator.SampleData</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

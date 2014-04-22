@@ -5,10 +5,12 @@ using System.Text;
 using Ninject;
 using Ninject.Planning.Bindings;
 using InstanceLocator.FakesResolver.Helpers;
+using System.Diagnostics.CodeAnalysis;
 
 namespace InstanceLocator.FakesResolver.Extensions
 {
-    [Obsolete("Not Used")]
+    [Obsolete("Abandoned")]
+    [ExcludeFromCodeCoverage]
     public static class NinjectBindingExtensions
     {
         /// <summary>

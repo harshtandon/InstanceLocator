@@ -48,7 +48,7 @@ namespace InstanceLocator.FakesResolver.NinjectResolvers
             var providerType = _providerMap.FirstOrDefault(pair => pair.Key(context.Request)).Value;
 
             if (providerType == null)
-                throw new Exception("InstanceLocator : Unable to find a resolver for " + context.Request.Service);
+                throw Exceptions.ExceptionBuilder.GetActivationException(context);
 
             return (IProvider)Activator.CreateInstance(providerType);
         }

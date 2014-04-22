@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using Ninject;
@@ -10,6 +11,7 @@ namespace InstanceLocator.FakesResolver.NinjectModules
     /// <summary>
     /// This module binds supported primitives to a constant value specified by the user.
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public class OverridenConstantsModule : NinjectModule
     {
         public override void Load()

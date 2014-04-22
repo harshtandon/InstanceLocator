@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using Ninject;
@@ -12,6 +13,7 @@ namespace InstanceLocator.FakesResolver.NinjectModules
     /// This module binds supported primitives (known at compile time) to some constant value.
     /// Types which can only be discovered during runtime like Enum and Sytem.Array are bound and resolved at runtime.
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public class DefaultConstantsModule : NinjectModule
     {
         public override void Load()

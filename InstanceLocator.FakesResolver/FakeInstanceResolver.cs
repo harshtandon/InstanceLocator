@@ -5,11 +5,12 @@ using Ninject;
 using Ninject.Modules;
 using Ninject.Planning.Bindings.Resolvers;
 using Ninject.Selection.Heuristics;
+using Ninject.Parameters;
 
 namespace InstanceLocator.FakesResolver
 {
     /// <summary>
-    /// A dependency resolver that uses Ninject as DI Container.
+    /// A dependency resolver that uses Ninject as DI Container to generate fake instances.
     /// </summary>
     public class FakeInstanceResolver : IDependencyResolver
     {
@@ -20,7 +21,8 @@ namespace InstanceLocator.FakesResolver
         /// <summary>
         /// Initialize a Standard Kernel, auto discover & load all modules in the current assembly.
         /// </summary>
-        public FakeInstanceResolver() : this(new StandardKernel())
+        public FakeInstanceResolver()
+            : this(new StandardKernel())
         { }
 
         /// <summary>
@@ -30,7 +32,7 @@ namespace InstanceLocator.FakesResolver
         public FakeInstanceResolver(IKernel kernel)
         {
             this._coreKernel = kernel;
-            
+
             // Get all modules in the current assembly
             this._coreKernel.Load(System.Reflection.Assembly.GetExecutingAssembly());
             this.SetupComponents();
@@ -57,7 +59,7 @@ namespace InstanceLocator.FakesResolver
 
         public T GetService<T>(string token)
         {
-           return  _coreKernel.Get<T>(token);
+            return _coreKernel.Get<T>(new Parameter("parameterName", token, false));
         }
 
         public object GetServiceByType(Type type)
@@ -67,19 +69,19 @@ namespace InstanceLocator.FakesResolver
 
         public object GetServiceByType(Type type, string token)
         {
-            return _coreKernel.Get(type, token);
+            return _coreKernel.Get(type, new Parameter("parameterName", token, false));
         }
 
         #region Private Methods
-        
-        private void SetupComponents()
+
+        protected virtual void SetupComponents()
         {
             // By default, Ninject registers 2 MissingBindingResolvers - 
             // [1] DefaultValueBindingResolver - Can safely remove this since we don't want resolution of any type 
             //  to return a default value for that type. Bindings for all supported types should be explicitly registered.
             // [2] SelfBindingResolver - This is needed but we will register our own SelfBindingResolver.
             // Ref- https://github.com/ninject/ninject/blob/master/src/Ninject/StandardKernel.cs
-            
+
             // Order is important here
             _coreKernel.Components.RemoveAll<IMissingBindingResolver>();
             _coreKernel.Components.Add<IMissingBindingResolver, CustomSelfBindingResolver>();

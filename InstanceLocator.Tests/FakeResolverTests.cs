@@ -7,6 +7,9 @@ using System.Linq;
 using InstanceLocator.SampleData;
 using System.Reflection;
 using InstanceLocator.FakesResolver;
+using System.Runtime.Serialization;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace InstanceLocator.Tests
 {
@@ -123,6 +126,39 @@ namespace InstanceLocator.Tests
             }
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(InstanceLocator.FakesResolver.Exceptions.ResolutionFailedException))]
+        public void TestTypeNoProvider()
+        {
+            var charInstance = _resolver.GetServiceByType(typeof(char), "charInstance");
+        }
+
+        //[TestMethod]
+        //public void TestExceptionSerialization()
+        //{
+        //    string result;
+
+        //    try
+        //    {
+        //        var charInstance = _resolver.GetServiceByType(typeof(char), "charInstance");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        using (Stream memStm = new MemoryStream())
+        //        {
+        //            BinaryFormatter formatter = new BinaryFormatter();
+        //            formatter.Serialize(memStm, ex);
+        //            memStm.Position = 0;
+
+        //            using (var streamReader = new StreamReader(memStm))
+        //            {
+        //                result = streamReader.ReadToEnd();
+        //            }
+        //        }
+        //        Assert.IsNotNull(result);
+        //    }
+        //}
+
         /// <summary>
         /// Assert whether all public properties of reference type are initialized
         /// </summary>
@@ -137,8 +173,8 @@ namespace InstanceLocator.Tests
                     continue;
 
                 var entityVal = publicProp.GetValue(entity, null);
-                
-                Assert.IsNotNull(entityVal, "Property " + publicProp + " of type " + type  + " was not initialized.");
+
+                Assert.IsNotNull(entityVal, "Property " + publicProp + " of type " + type + " was not initialized.");
             }
 
         }

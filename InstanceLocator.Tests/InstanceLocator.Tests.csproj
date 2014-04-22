@@ -54,6 +54,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="FakeResolverTests.cs" />
+    <Compile Include="InstanceLocatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

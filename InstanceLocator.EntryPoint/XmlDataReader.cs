@@ -1,22 +1,66 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using InstanceLocator.SampleData;
+using System.Xml;
 
 namespace InstanceLocator.EntryPoint
 {
+    /// <summary>
+    /// Helps deserialize the instances found in the data specification file.
+    /// </summary>
     public static class XmlDataReader
     {
-        public static void ReadFile(string path)
+        /// <summary>
+        /// Returns a dictionary of all instances mapped to the parameter names after discovery from the specified data specification file.
+        /// </summary>
+        /// <param name="dataPath"></param>
+        /// <param name="parameterRequests"></param>
+        /// <param name="testCaseScope"></param>
+        /// <returns></returns>
+        public static Dictionary<string, object> GetInstancesFromSpecification(string dataPath, Dictionary<string, Type> parameterRequests, string testCaseScope)
         {
+            var instancesFound = new Dictionary<string, object>();
 
-            Product pd = new Product(12) {IntroducedDate = DateTime.Now, NiceProduct = true, ProductId = 12345, ProductName ="Mush", ProductType = ProductType.FROZEN };
-            var custSerialized = System.Security.SecurityElement.Escape(SerializerHelper.SerializeToJson(pd));
+            XmlDocument dataSpec = new XmlDocument();
+            dataSpec.Load(dataPath);
 
-            Address ad =  new SampleData.Address() { AddressLine1 = "Lion 1", AddressLine2 = "Lion 2", addressType = AddressType.HOME, PinCode = 560017, DefaultAddress = true };
-            var addrSerialized = SerializerHelper.SerializeToXml(ad);
+            var testData = dataSpec.SelectSingleNode(string.Format("//TestData/Test[@TestMethod='{0}']", testCaseScope));
 
+            if (testData != null)
+            {
+                var testParams = testData.SelectNodes("param");
+
+                if (testParams != null)
+                {
+                    foreach (XmlNode parameter in testParams)
+                    {
+                        var paramName = parameter.Attributes["name"].Value;
+
+                        if (!parameterRequests.ContainsKey(paramName))
+                            continue;
+
+                        string serialized;
+
+                        if (parameter.ChildNodes.Count > 0)
+                        {
+                            if (parameter.ChildNodes[0] is XmlCDataSection)
+                            {
+                                var encodedData = parameter.ChildNodes[0] as XmlCDataSection;
+                                serialized = encodedData.InnerText;
+                            }
+                            else
+                                serialized = parameter.ChildNodes[0].InnerText;
+
+                            object instance = Deserializer.GetDeserializedInstance(parameterRequests[paramName], serialized);
+
+                            instancesFound.Add(paramName, instance);
+                        }
+                    }
+
+                }
+
+            }
+
+            return instancesFound;
         }
     }
 }

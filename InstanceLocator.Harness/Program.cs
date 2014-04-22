@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using InstanceLocator.FakesResolver.Abstract;
-using InstanceLocator;
 
 namespace InstanceLocator.Harness
 {
@@ -11,8 +9,7 @@ namespace InstanceLocator.Harness
     {
         static void Main(string[] args)
         {
-            //IDependencyResolver resolver = new FakeInstanceResolver();
-
+            InstanceLocator.FakesResolver.Abstract.IDependencyResolver resolver = new InstanceLocator.FakesResolver.FakeInstanceResolver();
 
             //var int1 = resolver.GetService<int>();
             //var int2 = resolver.GetService<int[]>();
@@ -27,6 +24,7 @@ namespace InstanceLocator.Harness
             //var dt2 = resolver.GetService<DateTime[]>();
 
             //var prod1 = resolver.GetServiceByType(typeof(SampleData.Product));
+            //var prod1 = resolver.GetServiceByType(typeof(SampleData.Product));
             //var prod2 = resolver.GetServiceByType(typeof(SampleData.Product[]));
 
             //var sal1 = resolver.GetServiceByType(typeof(SampleData.Sale));
@@ -35,7 +33,20 @@ namespace InstanceLocator.Harness
             //var chek1 = resolver.GetServiceByType(typeof(SampleData.Checkout));
 
 
-            InstanceLocator.EntryPoint.XmlDataReader.ReadFile("asd");
+            //var c1 = resolver.GetServiceByType(typeof(char));
+
+
+            var x = new Dictionary<string, Type>();
+
+            x.Add("orderId", typeof(int));
+            x.Add("priorityOrder", typeof(bool));
+            x.Add("productBought", typeof(SampleData.Product));
+            x.Add("deliveryAddress", typeof(SampleData.Address));
+
+            x.Add("orderDate", typeof(DateTime));
+            x.Add("customerInfo", typeof(SampleData.Customer));
+
+            var instances = EntryPoint.InstanceLocator.GetInstances(x, "getEmployeeByName_PositiveScenario");
 
             Console.WriteLine("Done ... ");
             Console.ReadKey(true);

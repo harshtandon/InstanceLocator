@@ -6,6 +6,7 @@ using Ninject;
 using Ninject.Activation;
 using Ninject.Activation.Strategies;
 using InstanceLocator.FakesResolver.Extensions;
+using System.Diagnostics.CodeAnalysis;
 
 namespace InstanceLocator.FakesResolver.ActivationStrategies
 {
@@ -15,6 +16,7 @@ namespace InstanceLocator.FakesResolver.ActivationStrategies
     /// This ensures fakes are composed of primitives with random values. Fakes become snowfakes.
     /// </summary>
     [Obsolete]
+    [ExcludeFromCodeCoverage]
     class RenewBindingStrategy : ActivationStrategy
     {
         public override void Activate(IContext context, InstanceReference reference)
