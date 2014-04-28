@@ -45,10 +45,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\InstanceLocator.EntryPoint\InstanceLocator.EntryPoint.csproj">
-      <Project>{c11821e4-1673-4081-aa39-a8b45289ff69}</Project>
-      <Name>InstanceLocator.EntryPoint</Name>
-    </ProjectReference>
     <ProjectReference Include="..\InstanceLocator.FakesResolver\InstanceLocator.FakesResolver.csproj">
       <Project>{09cc3297-2661-4ada-aeaa-d19f87fc5f29}</Project>
       <Name>InstanceLocator.FakesResolver</Name>
