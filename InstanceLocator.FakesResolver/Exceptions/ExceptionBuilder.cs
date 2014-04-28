@@ -36,15 +36,7 @@ namespace InstanceLocator.FakesResolver.Exceptions
             var targetRequest = new InstanceRequest();
 
             targetRequest.InstanceType = requestContext.Request.Service;
-
-            if (requestContext.Request.Target == null)
-            {
-                var parameter = requestContext.Request.Parameters.AsEnumerable().FirstOrDefault(param => param.Name == "parameterName");
-                targetRequest.ParameterName = (string)parameter.GetValue(requestContext, null);
-            }
-            else
-                targetRequest.ParameterName = requestContext.Request.Target.Name;
-
+            targetRequest.ParameterName = Helpers.ContextHelper.GetParameterNameFromContext(requestContext);
             targetRequest.RequestDepth = requestContext.Request.Depth;
             targetRequest.ParentRequest = BuildTargetRequest(requestContext.Request.ParentContext);
 

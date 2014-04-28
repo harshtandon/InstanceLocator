@@ -32,8 +32,9 @@
     <DocumentationFile>bin\Release\InstanceLocator.FakesResolver.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject">
-      <HintPath>D:\GitRepos\Code Peruse\Ninject\build\debug\Ninject.dll</HintPath>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net40\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,6 +50,7 @@
     <Compile Include="Exceptions\ExceptionBuilder.cs" />
     <Compile Include="Exceptions\ResolutionFailedException.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Helpers\ContextHelper.cs" />
     <Compile Include="Helpers\RandomNumberHelper.cs" />
     <Compile Include="Heuristics\ConstructorScoring.cs" />
     <Compile Include="Heuristics\PropertyInjector.cs" />
@@ -66,6 +68,9 @@
     <Compile Include="NinjectResolvers\FallbackResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extensions\NinjectBindingExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

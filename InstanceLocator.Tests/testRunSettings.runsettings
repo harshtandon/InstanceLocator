@@ -20,11 +20,9 @@
         <Configuration>
           <CodeCoverage>
             <ModulePaths>
-              <Exclude>
-                <ModulePath>.*CPPUnitTestFramework.*</ModulePath>
-				<ModulePath>.*SampleData.*</ModulePath>
-				<ModulePath>.*Tests.dll</ModulePath>
-              </Exclude>
+              <Include>
+				  <ModulePath>.*InstanceLocator.FakesResolver.dll</ModulePath>
+              </Include>
             </ModulePaths>
 			<Attributes>
 				<Exclude>

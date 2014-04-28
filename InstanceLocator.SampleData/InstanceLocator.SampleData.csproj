@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="AddressType.cs" />
+    <Compile Include="ProductIdentifier.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerCategory.cs" />
     <Compile Include="Product.cs" />

@@ -27,7 +27,7 @@ namespace InstanceLocator.Tests
         [TestMethod]
         public void TestStringInstance()
         {
-            var strInstance = _resolver.GetServiceByType(typeof(string));
+            var strInstance = _resolver.GetServiceByType(typeof(string), "stringInstance");
 
             Assert.IsNotNull(strInstance);
             Assert.IsInstanceOfType(strInstance, typeof(string));
@@ -37,13 +37,13 @@ namespace InstanceLocator.Tests
         [TestMethod]
         public void TestNumericInstance()
         {
-            var byteInstance = _resolver.GetServiceByType(typeof(byte));
-            var shortInstance = _resolver.GetServiceByType(typeof(short));
-            var intInstance = _resolver.GetServiceByType(typeof(int));
-            var longInstance = _resolver.GetServiceByType(typeof(long));
-            var floatInstance = _resolver.GetServiceByType(typeof(float));
-            var doubleInstance = _resolver.GetServiceByType(typeof(double));
-            var decimalInstance = _resolver.GetServiceByType(typeof(decimal));
+            var byteInstance = _resolver.GetServiceByType(typeof(byte), "byteInstance");
+            var shortInstance = _resolver.GetServiceByType(typeof(short), "shortInstance");
+            var intInstance = _resolver.GetServiceByType(typeof(int), "intInstance");
+            var longInstance = _resolver.GetServiceByType(typeof(long), "longInstance");
+            var floatInstance = _resolver.GetServiceByType(typeof(float), "floatInstance");
+            var doubleInstance = _resolver.GetServiceByType(typeof(double), "doubleInstance");
+            var decimalInstance = _resolver.GetServiceByType(typeof(decimal), "decimalInstance");
 
             Assert.IsInstanceOfType(byteInstance, typeof(byte));
             Assert.IsInstanceOfType(shortInstance, typeof(short));
@@ -57,7 +57,7 @@ namespace InstanceLocator.Tests
         [TestMethod]
         public void TestBoolInstance()
         {
-            var boolInstance = _resolver.GetServiceByType(typeof(bool));
+            var boolInstance = _resolver.GetServiceByType(typeof(bool), "boolInstance");
 
             Assert.IsInstanceOfType(boolInstance, typeof(bool));
         }
@@ -65,7 +65,7 @@ namespace InstanceLocator.Tests
         [TestMethod]
         public void TestDateTimeInstance()
         {
-            var dateInstance = _resolver.GetServiceByType(typeof(DateTime));
+            var dateInstance = _resolver.GetServiceByType(typeof(DateTime), "dateTimeInstance");
 
             Assert.IsInstanceOfType(dateInstance, typeof(DateTime));
             Assert.IsTrue((DateTime)dateInstance != new DateTime());
@@ -74,7 +74,7 @@ namespace InstanceLocator.Tests
         [TestMethod]
         public void TestEnumInstance()
         {
-            var enumInstance = _resolver.GetServiceByType(typeof(CustomerCategory));
+            var enumInstance = _resolver.GetServiceByType(typeof(CustomerCategory), "enumInstance");
 
             Assert.IsNotNull(enumInstance);
             Assert.IsInstanceOfType(enumInstance, typeof(CustomerCategory));
@@ -83,7 +83,7 @@ namespace InstanceLocator.Tests
         [TestMethod]
         public void TestComplexEntityWithProperty()
         {
-            var customer = _resolver.GetServiceByType(typeof(Customer));
+            var customer = _resolver.GetServiceByType(typeof(Customer), "customerInstance");
 
             Assert.IsNotNull(customer);
             Assert.IsInstanceOfType(customer, typeof(Customer));
@@ -93,7 +93,7 @@ namespace InstanceLocator.Tests
         [TestMethod]
         public void TestComplexEntityWithCtor()
         {
-            var product = _resolver.GetServiceByType(typeof(Product));
+            var product = _resolver.GetServiceByType(typeof(Product), "productInstance");
 
             Assert.IsNotNull(product);
             Assert.IsInstanceOfType(product, typeof(Product));
@@ -103,7 +103,7 @@ namespace InstanceLocator.Tests
         [TestMethod]
         public void TestPrimitiveArray()
         {
-            var strSet = (string[])_resolver.GetServiceByType(typeof(string[]));
+            var strSet = (string[])_resolver.GetServiceByType(typeof(string[]), "stringArrayInstance");
 
             Assert.IsNotNull(strSet);
             Assert.IsInstanceOfType(strSet, typeof(string[]));
@@ -114,7 +114,7 @@ namespace InstanceLocator.Tests
         [TestMethod]
         public void TestComplexEntityArray()
         {
-            var customerSet = (Customer[])_resolver.GetServiceByType(typeof(Customer[]));
+            var customerSet = (Customer[])_resolver.GetServiceByType(typeof(Customer[]), "customerArrayInstance");
 
             Assert.IsNotNull(customerSet);
             Assert.IsInstanceOfType(customerSet, typeof(Customer[]));
@@ -128,9 +128,16 @@ namespace InstanceLocator.Tests
 
         [TestMethod]
         [ExpectedException(typeof(InstanceLocator.FakesResolver.Exceptions.ResolutionFailedException))]
-        public void TestTypeNoProvider()
+        public void TestTypeNoProviderPrimitive()
         {
             var charInstance = _resolver.GetServiceByType(typeof(char), "charInstance");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InstanceLocator.FakesResolver.Exceptions.ResolutionFailedException))]
+        public void TestTypeNoProviderComplex()
+        {
+            var charInstance = _resolver.GetServiceByType(typeof(ProductIdentifier), "productIdentifierInstance");
         }
 
         //[TestMethod]

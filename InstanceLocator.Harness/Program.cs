@@ -24,8 +24,8 @@ namespace InstanceLocator.Harness
             //var dt2 = resolver.GetService<DateTime[]>();
 
             //var prod1 = resolver.GetServiceByType(typeof(SampleData.Product));
-            //var prod1 = resolver.GetServiceByType(typeof(SampleData.Product));
-            //var prod2 = resolver.GetServiceByType(typeof(SampleData.Product[]));
+            //var prod2 = resolver.GetServiceByType(typeof(SampleData.Product));
+            //var prod3 = resolver.GetServiceByType(typeof(SampleData.Product[]));
 
             //var sal1 = resolver.GetServiceByType(typeof(SampleData.Sale));
             //var sal2 = resolver.GetServiceByType(typeof(SampleData.Sale[]));
@@ -33,20 +33,24 @@ namespace InstanceLocator.Harness
             //var chek1 = resolver.GetServiceByType(typeof(SampleData.Checkout));
 
 
+            var cust1 = resolver.GetServiceByType(typeof(SampleData.Customer));
+            var cust2 = resolver.GetServiceByType(typeof(SampleData.Customer));
+            var cust3 = resolver.GetServiceByType(typeof(SampleData.Customer[]));
+
             //var c1 = resolver.GetServiceByType(typeof(char));
 
 
-            var x = new Dictionary<string, Type>();
+            //var x = new Dictionary<string, Type>();
 
-            x.Add("orderId", typeof(int));
-            x.Add("priorityOrder", typeof(bool));
-            x.Add("productBought", typeof(SampleData.Product));
-            x.Add("deliveryAddress", typeof(SampleData.Address));
+            //x.Add("orderId", typeof(int));
+            //x.Add("priorityOrder", typeof(bool));
+            //x.Add("productBought", typeof(SampleData.Product));
+            //x.Add("deliveryAddress", typeof(SampleData.Address));
 
-            x.Add("orderDate", typeof(DateTime));
-            x.Add("customerInfo", typeof(SampleData.Customer));
+            //x.Add("orderDate", typeof(DateTime));
+            //x.Add("customerInfo", typeof(SampleData.Customer));
 
-            var instances = EntryPoint.InstanceLocator.GetInstances(x, "getEmployeeByName_PositiveScenario");
+            //var instances = EntryPoint.InstanceLocator.GetInstances(x, "getEmployeeByName_PositiveScenario");
 
             Console.WriteLine("Done ... ");
             Console.ReadKey(true);

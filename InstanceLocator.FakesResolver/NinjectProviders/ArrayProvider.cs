@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Ninject;
 using Ninject.Activation;
+using Ninject.Parameters;
 using Ninject.Planning.Bindings;
 
 namespace InstanceLocator.FakesResolver.NinjectProviders
@@ -28,7 +29,7 @@ namespace InstanceLocator.FakesResolver.NinjectProviders
 
             for (int idx = 0; idx < arrayLength; ++idx)
             {
-                var elementInstance = context.Kernel.Get(elementType);
+                var elementInstance = context.Kernel.Get(elementType, new Parameter("parameterName", Helpers.ContextHelper.GetParameterNameFromContext(context) + "[" + idx + "]", false));
                 arrayInstance.SetValue(elementInstance, idx);
             }
 

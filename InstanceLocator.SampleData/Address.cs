@@ -12,5 +12,6 @@ namespace InstanceLocator.SampleData
         public int PinCode { get; set; }
         public AddressType addressType { get; set; }
         public bool DefaultAddress { get; set; }
+        public string[] OtherInfo { get; set; }
     }
 }

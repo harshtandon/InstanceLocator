@@ -65,6 +65,11 @@ namespace InstanceLocator.FakesResolver.Exceptions
     /// </summary>
     public class InstanceRequest
     {
+        public InstanceRequest()
+        {
+            ParameterName = "<Unknown>";
+        }
+
         /// <summary>
         /// The type for which an instance was requested. This request could have been explicit or implicit(resolved as a dependency for some other type)
         /// </summary>

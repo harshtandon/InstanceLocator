@@ -6,6 +6,7 @@ using Ninject.Modules;
 using Ninject.Planning.Bindings.Resolvers;
 using Ninject.Selection.Heuristics;
 using Ninject.Parameters;
+using System.Diagnostics.CodeAnalysis;
 
 namespace InstanceLocator.FakesResolver
 {
@@ -52,19 +53,22 @@ namespace InstanceLocator.FakesResolver
 
         #endregion
 
+        [ExcludeFromCodeCoverage]
         public T GetService<T>()
         {
-            return _coreKernel.Get<T>();
+            return (T)this.GetServiceByType(typeof(T), "NoToken");
         }
 
+        [ExcludeFromCodeCoverage]
         public T GetService<T>(string token)
         {
-            return _coreKernel.Get<T>(new Parameter("parameterName", token, false));
+            return (T)this.GetServiceByType(typeof(T), token);
         }
 
+        [ExcludeFromCodeCoverage]
         public object GetServiceByType(Type type)
         {
-            return _coreKernel.Get(type);
+            return this.GetServiceByType(type, "NoToken");
         }
 
         public object GetServiceByType(Type type, string token)
