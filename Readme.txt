@@ -1,3 +1,8 @@
+3rd Part Dependencies
+
+- Ninject 3.2.2
+- Newtonsoft JSON [Version conflicts with REST client dependency. Prefer same version for both components] 
+
 Supported Types
 
 Bool
@@ -27,3 +32,5 @@ Notes -
 - Multiple bindings for the same type in the same scope is not supported. ie. no support for IEnumerable<T> GetServices<T>()
 - Target types (excluding root) that are of type array will only have one element in the array. This is due to the way Ninject handles arrays. A resolution is possible by modifying the Ninject src as follows -
   In Ninject.Planning.Targets.Target<T>.ResolveWithin() comment the logic for arrays - Ninject uses this logic for handling multiple bindings whihch we don't support anyways.
+- SampleData.xml is included for demonstartion of how to use InstanceLocator.EntryPoint if you don't want to use fakes.
+

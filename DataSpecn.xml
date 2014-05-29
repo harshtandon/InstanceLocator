@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TestData>
+
+	<Test TestMethod="getEmployeeByName">
+	
+		<param name="orderId">
+			4598
+		</param>
+		<param name="priorityOrder">
+			true
+		</param>
+		<param name="productBought">
+			<![CDATA[{"ProductId":12345,"ProductName":"Mush","NiceProduct":false,"IntroducedDate":"2014-04-09T17:55:08.4978967+05:30","ProductType":3}]]>
+		</param>
+		<param name="deliveryAddress">
+			<![CDATA[<Address xmlns="http://schemas.datacontract.org/2004/07/InstanceLocator.SampleData" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><AddressLine1>Lion 1</AddressLine1><AddressLine2>Lion 2</AddressLine2><DefaultAddress>true</DefaultAddress><PinCode>560017</PinCode><addressType>HOME</addressType></Address>]]>
+		</param>
+		
+	</Test>
+	
+</TestData>
